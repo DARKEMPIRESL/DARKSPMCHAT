@@ -63,19 +63,19 @@ START_BUTTON = InlineKeyboardMarkup([[
                   )
 
 DEV_BTN = InlineKeyboardMarkup([[              
-            InlineKeyboardButton('𝕯𝖆𝖗𝖐 𝕰𝖒𝖕𝖎𝖗𝖊 🇱🇰🇸 🇱 🇧 🇴 🇹 🇸 ™', user_id="SL_BOTS_TM")
+            InlineKeyboardButton('𝕯𝖆𝖗𝖐 𝕰𝖒𝖕𝖎𝖗𝖊 🇱🇰🇸 🇱 🇧 🇴 🇹 🇸 ™', url="https://t.me/SL_BOTS_TM")
             ],
             [
-            InlineKeyboardButton('unknown boy┊𝙰𝙻𝙿𝙷𝙰 么 ™', user_id="UnknownB_o_y")
+            InlineKeyboardButton('unknown boy┊𝙰𝙻𝙿𝙷𝙰 么 ™', url="https://t.me/UnknownB_o_y")
             ],
             [
-            InlineKeyboardButton('ŦħȺɍᵾꝁ ɌɇnᵾɉȺ', user_id="ImTharuk")
+            InlineKeyboardButton('ŦħȺɍᵾꝁ ɌɇnᵾɉȺ', url="https://t.me/ImTharuk")
             ],
             [
-            InlineKeyboardButton('', user_id="ImGishan")
+            InlineKeyboardButton('', url="https://t.me/ImGishan")
             ],
             [
-            InlineKeyboardButton('𝘿𝙚𝙣𝙪𝙬𝙖𝙣 🇱🇰', user_id="ImDenuwan")
+            InlineKeyboardButton('𝘿𝙚𝙣𝙪𝙬𝙖𝙣 🇱🇰', url="https://t.me/ImDenuwan")
             ]]
             )
 HELP_BTN = InlineKeyboardMarkup([[              
