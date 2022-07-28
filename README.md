@@ -1,6 +1,6 @@
 # DARKSPM CHATBOT
 <p align="center">
-<img src="https://telegra.ph/file/28575e94555f0d5a66d69.jpgv" width="520", height="520"></p>
+<img src="https://telegra.ph/file/28575e94555f0d5a66d69.jpg" width="520", height="520"></p>
 
 
 
