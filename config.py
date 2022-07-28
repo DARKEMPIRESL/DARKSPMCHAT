@@ -34,7 +34,7 @@ FORCESUB_BUTTONS = InlineKeyboardMarkup([[
                  InlineKeyboardButton('Join Here', url=f"https://t.me/{force_subchannel}")
                  ],
                  [
-                 InlineKeyboardButton('🐞 ʀᴘᴏʀᴛ ʙᴜɢs 🐞', user_id="SL_BOTS_TM")
+                 InlineKeyboardButton('🐞 ʀᴘᴏʀᴛ ʙᴜɢs 🐞', url="https://t.me/SL_BOTS_TM")
                  ],
                  [
                  InlineKeyboardButton(text="♻️ Reload ♻️",callback_data="ref")
