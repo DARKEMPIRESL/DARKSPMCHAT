@@ -1,5 +1,5 @@
-from WhisperBot.database.users_sql import Users, num_users
-from WhisperBot.database import SESSION
+from handlers.database.users_sql import Users, num_users
+from handlers.database import SESSION
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
