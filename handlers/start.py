@@ -1,6 +1,7 @@
 from Data import Data
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup
+import random
 
 STICKERS = ["CAACAgUAAxkBAAIEI2Lh9wABwA5eCscl00ee7IQgUeJ8KAACHgUAAqrCAAFVByHxjhsfLyEeBA", "CAACAgUAAxkBAAIEIWLh9vxLot7QZlvMp1UT_QrX4O92AAJ5BgACNpEBVcaIt8a3oOWLHgQ"]
 
