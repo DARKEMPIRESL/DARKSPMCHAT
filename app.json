@@ -20,10 +20,6 @@
             "description": "Your Bot token from @Botfather",
             "value": ""
         },
-        "ADMIN": {
-            "description": "Admin user ID for incoming queries",
-            "required": true
-        },
         
         "ENV": {
             "description": "Set this to ANYTHING",
