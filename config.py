@@ -14,6 +14,7 @@ API_HASH = os.getenv("API_HASH", "")  # from https://my.telegram.org/apps
 MONGO_URI = os.getenv("MONGO_URI", "")
 force_subchannel = os.getenv("FSUB", "SLBotOfficial")
 OWNER_ID = int(os.environ.get("OWNER_ID", "1120271521"))
+ADMIN = int(os.environ.get("ADMIN"))
 START_STRING = os.getenv("START_STRING", "Hi {}, Welcome to  {}'s Pm Bot.")
 START_STICKER = os.getenv("START_STICKER", "CAADBQADZQQAAlHy2FQE5VU4XGjXrwI")
 DATABASE_URL = os.environ.get('DATABASE_URL', None)
