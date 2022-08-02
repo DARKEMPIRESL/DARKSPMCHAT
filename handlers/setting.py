@@ -8,7 +8,7 @@ tick = "✅"
 cross = "❌"
 
 
-@Client.on_message(~filters.edited & filters.incoming & filters.group & filters.command("settings"), group=-1)
+@Client.on_message(~filters.edited & filters.incoming & filters.group & filters.command("setting"), group=-1)
 async def settings(_, msg: Message):
     chat_id = msg.chat.id
     q = SESSION.query(Chats).get(chat_id)
