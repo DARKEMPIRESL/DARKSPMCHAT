@@ -23,12 +23,13 @@ By @SL_BOTS_TM
         [
             InlineKeyboardButton("🔒 Send a Whisper 🔒", switch_inline_query="")
         ],
+        [InlineKeyboardButton("🤖 Bot Status and More Bots 🤖", url="https://t.me/SLBotOfficial/28")],
         [
-            InlineKeyboardButton("How to Use ❔", callback_data="help"),
-            InlineKeyboardButton("🎪 About 🎪", callback_data="about")
+            InlineKeyboardButton("❔ How to Use ❔", callback_data="help"),
+            InlineKeyboardButton("♾️ About ♾️", callback_data="about")
         ],
         [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/SLBotOfficial")],
-        [InlineKeyboardButton("🎨 Support Group 🎨", url="https://t.me/SLBotsChat")],
+        [InlineKeyboardButton("🛫 Support Group 🛫", url="https://t.me/trtec
     ]
 
     # Help Message
