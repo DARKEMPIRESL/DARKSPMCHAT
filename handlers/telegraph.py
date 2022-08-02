@@ -7,10 +7,10 @@ from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent,Inl
 
 
 DARK = Client(
-   "Telegra.ph Uploader",
-   api_id=Config.APP_ID,
-   api_hash=Config.API_HASH,
-   bot_token=Config.BOT_TOKEN,
+   "DARKS PM CHAT",
+   api_id=config.APP_ID,
+   api_hash=config.API_HASH,
+   bot_token=config.BOT_TOKEN,
 )
 
 @DARK.on_message(filters.photo & filters.incoming & filters.command("tgp"))
