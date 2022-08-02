@@ -29,7 +29,7 @@ By @SL_BOTS_TM
             InlineKeyboardButton("♾️ About ♾️", callback_data="about")
         ],
         [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/SLBotOfficial")],
-        [InlineKeyboardButton("🛫 Support Group 🛫", url="https://t.me/SLBotsChat)],
+        [InlineKeyboardButton("🛫 Support Group 🛫", url="https://t.me/SLBotsChat")]
     ]
 
     # Help Message
