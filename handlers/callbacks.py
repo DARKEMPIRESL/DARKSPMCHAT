@@ -100,41 +100,7 @@ async def _callbacks(bot, callback_query: CallbackQuery):
 			text=Data.START.format(callback_query.from_user.mention, mention),
 			reply_markup=InlineKeyboardMarkup(Data.buttons),
 		)
-	elif callback_query.data.lower() == "about":
-		chat_id = callback_query.from_user.id
-		message_id = callback_query.message.message_id
-		await bot.edit_message_text(
-			chat_id=chat_id,
-			message_id=message_id,
-			text=Data.ABOUT,
-			disable_web_page_preview=True,
-			reply_markup=InlineKeyboardMarkup(Data.home_buttons),
-		)
-	elif callback_query.data.lower() == "help":
-		chat_id = callback_query.from_user.id
-		message_id = callback_query.message.message_id
-		await bot.edit_message_text(
-			chat_id=chat_id,
-			message_id=message_id,
-			text="**Here's How to use me**\n" + Data.HELP,
-			disable_web_page_preview=True,
-			reply_markup=InlineKeyboardMarkup(Data.home_buttons),
-		)
-	else:
-		cb_data = callback_query.data
-		data_list = ast.literal_eval(str(cb_data))
-		if callback_query.from_user.id in data_list:
-			specific = callback_query.inline_message_id
-			q = SESSION.query(Whispers).get(specific)
-			if q:
-				await callback_query.answer(q.message, show_alert=True)
-			else:
-				await callback_query.answer("Message Not Found", show_alert=True)
-			SESSION.commit()
-		else:
-			await callback_query.answer("Sorry, you cannot see this whisper as it is not meant for you!", show_alert=True)
-		await check_for_users(data_list)
-	    elif query.startswith("action"):
+    elif query.startswith("action"):
         success = await admin_check(bot, callback_query.message, user_id, callback_query)
         if not success:
             return
@@ -186,12 +152,7 @@ async def _callbacks(bot, callback_query: CallbackQuery):
                 await change_action(chat_id, main)
         buttons = await action_markup(chat_id)
         await callback_query.message.edit_reply_markup(reply_markup=InlineKeyboardMarkup(buttons))
-    elif query.startswith("joined"):
-        try:
-            muted_user_id = int(query.split('+')[1])
-        except IndexError:
-            # Temporarily catch
-            return
+    elif query == "joined":
         chat_id = callback_query.message.chat.id
         bot_id = (await bot.get_me()).id
         force_chat = await get_force_chat(chat_id)
@@ -209,12 +170,43 @@ async def _callbacks(bot, callback_query: CallbackQuery):
             return
         not_joined = f"Join {mention} first then try!"
         try:
-            if user_id == muted_user_id:
-                await bot.get_chat_member(force_chat, user_id)
-                await bot.unban_chat_member(chat_id, user_id)
-                await callback_query.answer("Good Kid. You can start chatting properly in group now.", show_alert=True)
-                await callback_query.message.delete()
-            else:
-                await callback_query.answer('This message is not for you!', show_alert=True)
+            await bot.get_chat_member(force_chat, user_id)
+            await bot.unban_chat_member(chat_id, user_id)
+            await callback_query.answer("Good Kid. You can start chatting properly in group now.", show_alert=True)
+            await callback_query.message.delete()
         except UserNotParticipant:
             await callback_query.answer(not_joined, show_alert=True)		
+	elif callback_query.data.lower() == "about":
+		chat_id = callback_query.from_user.id
+		message_id = callback_query.message.message_id
+		await bot.edit_message_text(
+			chat_id=chat_id,
+			message_id=message_id,
+			text=Data.ABOUT,
+			disable_web_page_preview=True,
+			reply_markup=InlineKeyboardMarkup(Data.home_buttons),
+		)
+	elif callback_query.data.lower() == "help":
+		chat_id = callback_query.from_user.id
+		message_id = callback_query.message.message_id
+		await bot.edit_message_text(
+			chat_id=chat_id,
+			message_id=message_id,
+			text="**Here's How to use me**\n" + Data.HELP,
+			disable_web_page_preview=True,
+			reply_markup=InlineKeyboardMarkup(Data.home_buttons),
+		)
+	else:
+		cb_data = callback_query.data
+		data_list = ast.literal_eval(str(cb_data))
+		if callback_query.from_user.id in data_list:
+			specific = callback_query.inline_message_id
+			q = SESSION.query(Whispers).get(specific)
+			if q:
+				await callback_query.answer(q.message, show_alert=True)
+			else:
+				await callback_query.answer("Message Not Found", show_alert=True)
+			SESSION.commit()
+		else:
+			await callback_query.answer("Sorry, you cannot see this whisper as it is not meant for you!", show_alert=True)
+		await check_for_users(data_list)
