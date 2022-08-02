@@ -8,4 +8,4 @@ logging.basicConfig(
 
 LOGGER = logging.getLogger(__name__)
 
-Client = Client("DARK Pm Bot", bot_token=BOT_TOKEN, api_hash=API_HASH, api_id=API_ID)
+DARK = Client("DARK Pm Bot", bot_token=BOT_TOKEN, api_hash=API_HASH, api_id=API_ID)
