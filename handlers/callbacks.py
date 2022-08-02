@@ -8,7 +8,6 @@ from Data import Data
 from handlers.database.whisper_sql import Whispers
 from handlers.bot_users import check_for_users
 from handlers.admin_check import admin_check
-from handlers.settings import action_markup
 from pyrogram.errors.exceptions import UserNotParticipant
 
 tick = "✅"
