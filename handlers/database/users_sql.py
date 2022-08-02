@@ -1,4 +1,4 @@
-from sqlalchemy import Column, BIGINT, String
+from sqlalchemy import Column, BIGINT, String, JSON
 from . import BASE, SESSION
 
 
