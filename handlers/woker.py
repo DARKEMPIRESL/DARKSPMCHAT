@@ -24,7 +24,7 @@ async def telegraph_group(_, message: Message):
         if chat_user.status in ["creator", "administrator"]:
             allowed = True
         else:
-            allowed = False
+            allowed = True
     else:
         allowed = True
     SESSION.close()
