@@ -1,4 +1,4 @@
-from handlers.plugins import cmds, cback
+from handlers.plugins import cmds
 from pyrogram import idle
 from handlers import tbot, pbot
 from config import *
