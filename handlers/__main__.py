@@ -19,7 +19,7 @@ for file in Files:
     Imported.append(importlib.import_module(
     	'handlers.plugins.{}'.format(file.split('.')[0])))
 
-pbot.start()
+
 tbot.start(bot_token=BOT_TOKEN)
 print(BOT_STARTED)
 idle()
