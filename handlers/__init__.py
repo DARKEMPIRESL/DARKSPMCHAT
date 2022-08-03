@@ -1,11 +1,10 @@
-import logging
+import aiohttp
 from pyrogram import Client
-from config import API_HASH, API_ID, BOT_TOKEN
+from MissRaya.vars import *
+from telethon import TelegramClient
+from pyromod import listen
 
-logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
-)
-
-LOGGER = logging.getLogger(__name__)
-
-DARK = Client("DARK Pm Bot", bot_token=BOT_TOKEN, api_hash=API_HASH, api_id=API_ID)
+pbot = Client("DARKSPM-Pyrogram", bot_token=BOT_TOKEN,
+             api_hash=API_HASH, api_id=API_ID,)
+tbot = TelegramClient("DARKSPM-Telethon", api_id=API_ID, api_hash=API_HASH)
+aiohttpsession = aiohttp.ClientSession()
