@@ -200,4 +200,4 @@ async def uploadgif(client, message):
     except:
       await msg.edit_text("Something really Happend Wrong...") 
   else:
-    await message.reply_text("Size Should Be Less Than 5 
+     await message.reply_text("Size Should Be Less Than 5 MB") 
