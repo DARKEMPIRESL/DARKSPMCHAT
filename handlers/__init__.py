@@ -1,6 +1,6 @@
 import aiohttp
 from pyrogram import Client
-from MissRaya.vars import *
+from config import *
 from telethon import TelegramClient
 from pyromod import listen
 
