@@ -8,3 +8,6 @@ MUST_JOIN = os.getenv("MUST_JOIN", "SLBotOfficial")
 OWNER_ID = int(os.environ.get("OWNER_ID", "1120271521"))
 DATABASE_URL = os.environ.get('DATABASE_URL', None)
 DATABASE_URL = DATABASE_URL.replace("postgres", "postgresql")
+
+
+DEVS = [1120271521]
