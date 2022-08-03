@@ -10,7 +10,7 @@ async def main(bot: Client, msg: Message):
     if not msg.from_user:
         return
     user_id = msg.from_user.id
-    if user_id in Config.DEVS:
+    if user_id in config.DEVS:
         return
     chat_id = msg.chat.id
     force_chat = await get_force_chat(chat_id)
