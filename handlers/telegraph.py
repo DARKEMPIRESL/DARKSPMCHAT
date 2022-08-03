@@ -8,7 +8,7 @@ from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent,Inl
 
 DARK = Client(
    "DARKS PM CHAT",
-   api_id=APP_ID,
+   api_id=API_ID,
    api_hash=API_HASH,
    bot_token=BOT_TOKEN,
 )
