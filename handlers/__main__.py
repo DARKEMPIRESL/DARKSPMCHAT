@@ -17,7 +17,7 @@ for file in onlyfiles:
 Imported = []
 for file in Files:
     Imported.append(importlib.import_module(
-    	'MissRaya.plugins.{}'.format(file.split('.')[0])))
+    	'handlers.plugins.{}'.format(file.split('.')[0])))
 
 pbot.start()
 tbot.start(bot_token=BOT_TOKEN)
