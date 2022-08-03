@@ -9,7 +9,7 @@ PR_HELP = """
 ‣ `/spurge` - Same as purge, but doesnt send the final confirmation message.
 ‣ `/del` - Deletes the replied to message.
 """
-
+ 
 @tbot.on(events.NewMessage(pattern=r"^[/]purge"))
 @is_admin
 async def purge_messages(event, perm):
