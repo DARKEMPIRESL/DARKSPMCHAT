@@ -8,9 +8,9 @@ from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent,Inl
 
 DARK = Client(
    "DARKS PM CHAT",
-   api_id=config.APP_ID,
-   api_hash=config.API_HASH,
-   bot_token=config.BOT_TOKEN,
+   api_id=APP_ID,
+   api_hash=API_HASH,
+   bot_token=BOT_TOKEN,
 )
 
 @DARK.on_message(filters.photo & filters.incoming & filters.command("tgp"))
