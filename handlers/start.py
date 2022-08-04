@@ -232,7 +232,7 @@ picmebtns = InlineKeyboardMarkup([[
                ]]
                )
 
-@Client.on_message(filters.private & filters.command(["start"]))
+@Client.on_message(filters.command(["start"]))
 async def help_me(bot, message):
     USER = InlineKeyboardMarkup([[              
                  InlineKeyboardButton('USER', url=f"https://t.me/{message.from_user.username}")
