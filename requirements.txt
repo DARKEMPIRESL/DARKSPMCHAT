@@ -1,4 +1,4 @@
-pyrogram
+pyrogram~=1.2.9
 Pillow~=8.3.1
 requests~=2.25.1
 SQLAlchemy~=1.4.21
