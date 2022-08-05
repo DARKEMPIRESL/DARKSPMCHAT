@@ -9,6 +9,7 @@ from handlers.database.whisper_sql import Whispers
 from handlers.bot_users import check_for_users
 from handlers.admin_check import admin_check
 from pyrogram.errors.exceptions import UserNotParticipant
+from handlers.start import *
 
 tick = "✅"
 cross = "❌"
@@ -133,3 +134,232 @@ async def _callbacks(bot, callback_query: CallbackQuery):
 		else:
 			await callback_query.answer("Sorry, you cannot see this whisper as it is not meant for you!", show_alert=True)
 		await check_for_users(data_list)
+
+@Client.on_callback_query()  
+async def tgm(bot, update):  
+    if update.data == "ref": 
+        await update.answer(
+             text="♻️Reloading.....♻️",
+        )
+
+    elif update.data == "bamk":
+         await update.message.edit_text(
+             text=START_STRING,
+             reply_markup=START_BUTTON,
+             disable_web_page_preview=True
+         ) 
+         await update.answer(
+             text="️🍃 𝗕𝗔𝗖𝗞 🍃",
+         )
+    elif update.data == "tgm":
+         await update.message.edit_text(
+             text=TELEGRAPH,
+             reply_markup=HELPB_BUTTON,
+             disable_web_page_preview=True
+         )
+         await update.answer(
+             text="🔱 𝕿𝖊𝖑𝖊𝖌𝖗𝖆𝖕𝖍 🔱",
+         )
+    elif update.data == "logoc":
+         await update.message.edit_text(
+             text=LOGO_STRING,
+             reply_markup=HELPB_BUTTON,
+             disable_web_page_preview=True
+         )  
+         await update.answer(
+             text="🔱 𝕷𝖔𝖌𝖔 🔱",
+         )         
+    elif update.data == "songg":
+         await update.message.edit_text(
+             text=SONG_STRING,
+             reply_markup=HELPB_BUTTON,
+             disable_web_page_preview=True
+         )
+         await update.answer(
+             text="🔱 🇸 🇴 🇳 🇬 🇸 🔱", 
+         )
+    elif update.data == "qrg":
+         await update.message.edit_text(
+             text=QR_STRING,
+             reply_markup=HELPB_BUTTON,
+             disable_web_page_preview=True
+         )
+         await update.answer(
+             text="🔱 𝗤𝗥 𝗚𝗘𝗡𝗘𝗥𝗔𝗧𝗢𝗥 🔱",
+         )
+    elif update.data == "htgm":
+         await update.message.edit_text(
+             text=TELEGRAPH,
+             reply_markup=HHHELP_BUTTONS,
+             disable_web_page_preview=True
+         )
+         await update.answer(
+             text="🔱 𝕿𝖊𝖑𝖊𝖌𝖗𝖆𝖕𝖍 🔱",
+         )
+    elif update.data == "hlogoc":
+         await update.message.edit_text(
+             text=LOGO_STRING,
+             reply_markup=HHHELP_BUTTONS,
+             disable_web_page_preview=True
+         )  
+         await update.answer(
+             text="🔱 𝕷𝖔𝖌𝖔 🔱",
+         )         
+    elif update.data == "hsongg":
+         await update.message.edit_text(
+             text=SONG_STRING,
+             reply_markup=HHHELP_BUTTONS,
+             disable_web_page_preview=True
+         )
+         await update.answer(
+             text="🔱 🇸 🇴 🇳 🇬 🇸 🔱",
+         )
+    elif update.data == "hqrg":
+         await update.message.edit_text(
+             text=QR_STRING,
+             reply_markup=HHHELP_BUTTONS,
+             disable_web_page_preview=True
+         )
+         await update.answer(
+             text="🔱 𝗤𝗥 𝗚𝗘𝗡𝗘𝗥𝗔𝗧𝗢𝗥 🔱",
+         )    
+    elif update.data == "cmds":
+         await update.message.edit_text(
+             text=HELP_STRING,
+             reply_markup=HELP_BUTTONS,
+             disable_web_page_preview=True
+         ) 
+         await update.answer(
+             text="🌴 𝗛𝗲𝗹𝗽 🌴",  
+         ) 
+    elif update.data == "helpb":
+         await update.message.edit_text(
+             text=HELP_STRING,
+             reply_markup=HELP_BUTTONS,
+             disable_web_page_preview=True
+         )
+         await update.answer(
+             text="🍃 𝗕𝗔𝗖𝗞 🍃",  
+         )
+    elif update.data == "hhbak":
+         await update.message.edit_text(
+             text=HELP_STRING,
+             reply_markup=GHELP_BUTTONS,
+             disable_web_page_preview=True
+         )
+         await update.answer(
+             text="🍃 𝗕𝗔𝗖𝗞 🍃",  
+         )
+    elif update.data == "ppbak":
+         await update.message.edit_text(
+             text=HELP_STRING,
+             reply_markup=PICMEH_BUTTONS,
+             disable_web_page_preview=True
+         )
+         await update.answer(
+             text="🍃 𝗕𝗔𝗖𝗞 🍃",  
+         )
+    elif update.data == "pbamk":
+         await update.message.edit_text(
+             text=HELP_STRING,
+             reply_markup=PICMEH_BUTTONS,
+             disable_web_page_preview=True
+         )
+         await update.answer(
+             text="🍃 𝗕𝗔𝗖𝗞 🍃",  
+         )
+    elif update.data == "helpp":
+         await update.message.edit_text(
+             text=HELP_STRING,
+             reply_markup=PICMEH_BUTTONS,
+             disable_web_page_preview=True
+         )
+         await update.answer(
+             text="🍃 𝗕𝗔𝗖𝗞 🍃",  
+         )
+    elif update.data == "ptgm":
+         await update.message.edit_text(
+             text=TELEGRAPH,
+             reply_markup=PICMEB_BUTTONS,
+             disable_web_page_preview=True
+         )
+         await update.answer(
+             text="🔱 𝕿𝖊𝖑𝖊𝖌𝖗𝖆𝖕𝖍 🔱",
+         )
+    elif update.data == "plogoc":
+         await update.message.edit_text(
+             text=LOGO_STRING,
+             reply_markup=PICMEB_BUTTONS,
+             disable_web_page_preview=True
+         )  
+         await update.answer(
+             text="🔱 𝕷𝖔𝖌𝖔 🔱",
+         )         
+    elif update.data == "psongg":
+         await update.message.edit_text(
+             text=SONG_STRING,
+             reply_markup=PICMEB_BUTTONS,
+             disable_web_page_preview=True
+         )
+         await update.answer(
+             text="🔱 🇸 🇴 🇳 🇬 🇸 🔱",
+         )
+    elif update.data == "pqrg":
+         await update.message.edit_text(
+             text=QR_STRING,
+             reply_markup=PICMEB_BUTTONS,
+             disable_web_page_preview=True
+         )
+         await update.answer(
+             text="🔱 𝗤𝗥 𝗚𝗘𝗡𝗘𝗥𝗔𝗧𝗢𝗥 🔱",
+         )     
+    elif update.data == "hcmds":
+         await update.message.edit_text(
+             text=HELP_STRING,
+             reply_markup=GHELP_BUTTONS,
+             disable_web_page_preview=True
+         )
+         await update.answer(
+             text="🌴 𝗛𝗲𝗹𝗽 🌴",  
+         )
+    elif update.data == "hbamk":
+         text = f"Hi {update.from_user.mention}\n\n**» press the button below to read the explanation and see the list of available commands !**\n\n__⚡️ Powered by ⚡️__[𝕯𝖆𝖗𝖐 𝕰𝖒𝖕𝖎𝖗𝖊 🇱🇰🇸 🇱 🇧 🇴 🇹 🇸 ™](t.me/SL_BOTS_TM)"
+         reply_markup = InlineKeyboardMarkup([[
+                 InlineKeyboardButton(text="𝗛𝗲𝗹𝗽⁉️",callback_data="hcmds")
+                 ]]
+                 )
+         await update.message.edit_text(
+             text=text,
+             reply_markup=reply_markup,
+             disable_web_page_preview=True
+         ) 
+         await update.answer(
+             text="🍃 𝗕𝗔𝗖𝗞 🍃",  
+         )
+    elif update.data == "ref":
+         await update.answer(
+             text="♻️Reloading.....♻️",
+         )
+    elif update.data == "picme":
+        await update.answer("....🔱 𝗣𝗶𝗰 𝗺𝗲 🔱....\nCapture started...Creating Your dp")
+        PICME_TEXT = f"""
+**Now You can Create your Image Useing Me!**
+ Pic me : Capture Your Profile Picture.
+
+Send To Inbox Automatically You must start
+[This Bot](https://t.me/darks_pm_bot)
+
+User : {update.from_user.mention}
+"""
+        photoid = update.from_user.photo.big_file_id  
+        photo = await bot.download_media(photoid)
+        await update.edit_message_media(InputMediaPhoto(media=photo, caption=PICME_TEXT), reply_markup=picmebtns)
+        await Client.send_photo(update.from_user.id, photo=photo, caption=PICME_TEXT.format(update.from_user.mention))
+        os.remove(photo)
+    elif update.data == "add":
+         await update.answer(
+             text="Adding Soon....",
+         )    
+
+
+		
