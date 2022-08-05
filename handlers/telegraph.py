@@ -70,7 +70,7 @@ async def telegraph(client, message):
       await message.edit_text("υρℓσα∂ιng◉◉◉◉❍")
       await message.edit_text("υρℓσα∂ιng◉◉◉◉◉")   
       await message.reply("Not supported!")
-        return
+      return
     download_location = await client.download_media(
         message=message.reply_to_message,
         file_name="root/downloads/",
