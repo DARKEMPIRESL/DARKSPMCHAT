@@ -10,6 +10,7 @@ from handlers.bot_users import check_for_users
 from handlers.admin_check import admin_check
 from pyrogram.errors.exceptions import UserNotParticipant
 from handlers.start import *
+from handlers.calculator import *
 
 tick = "✅"
 cross = "❌"
@@ -360,6 +361,29 @@ User : {update.from_user.mention}
          await update.answer(
              text="Adding Soon....",
          )    
+		
+@Client.on_callback_query()
+async def cb_data(bot, update):
+        data = update.data
+        try:
+            message_text = update.message.text.split("\n")[0].strip().split("=")[0].strip()
+            message_text = '' if CALCULATE_TEXT in message_text else message_text
+            if data == "=":
+                text = float(eval(message_text))
+            elif data == "DEL":
+                text = message_text[:-1]
+            elif data == "AC":
+                text = ""
+            else:
+                text = message_text + data
+            await update.message.edit_text(
+                text=f"{text}\n\n{CALCULATE_TEXT}",
+                disable_web_page_preview=True,
+                reply_markup=CALCULATE_BUTTONS
+            )
+        except Exception as error:
+            print(error)
+		
 
 
 		
