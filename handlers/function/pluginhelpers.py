@@ -11,7 +11,7 @@ import aiohttp
 from PIL import Image
 from pyrogram import Client
 from pyrogram.errors import FloodWait, MessageNotModified
-from pyrogram.types import Chat, Message, User, Client
+from pyrogram.types import Chat, Message, User
 
 
 OWNER_ID = "1120271521"
