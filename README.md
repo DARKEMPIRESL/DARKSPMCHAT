@@ -5,10 +5,32 @@
 
 
 # DEPLOY TO HEROKU
-* [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/DARKEMPIRESL/DARKSPMCHAT)
-<br><br>
 
-</details>
+<p align="left"><a href="https://heroku.com/deploy?template=https://github.com/DARKEMPIRESL/DARKSPMCHAT"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+
+# DEPLOY TO RAILWAY
+
+<p align="left">
+<a href="https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2FDARKEMPIRESL%2FDARKSPMCHAT"
+">
+     <img height="30px" src="https://railway.app/button.svg">
+  </a>
+</p>
+
+</a>
+</p>
+
+# DEPLOY TO VPS
+
+
+```sh
+$ git clone https://github.com/DARKEMPIRESL/DARKSPMCHAT.git
+$ cd Calculator-Bot
+$ pip3 install -r requirements.txt
+# <create Variables Appropriately>
+$ python3 bot.py
+```
+
 
 ## Features for Owner
 - `broadcast`
