@@ -32,7 +32,7 @@ def is_admin(func):
     return oops
 
 
-@Client.on_message(filters.command("write") & ~filters.edited & ~filters.bot)
+@Client.on_message(filters.command("dwrite") & ~filters.edited & ~filters.bot)
 async def writer(client, message):
     if message.reply_to_message:
         try:
