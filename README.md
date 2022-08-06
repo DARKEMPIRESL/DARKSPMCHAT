@@ -44,7 +44,6 @@ $ python3 bot.py
 - `API_ID` - Get This Value from [my.telegram.org](https://my.telegram.org)
 -  `API_HASH` - Get This Value from [my.telegram.org](https://my.telegram.org)
 -  `BOT_TOKEN` - Get This Value from [@BotFather](https://my.telegram.org)
--  `MONGO_URI` - Get This Value from [Mongodb.](https://mongodb.com)
 -  `OWNER_ID` - Bot OWNER ids
 <br><br>
 
