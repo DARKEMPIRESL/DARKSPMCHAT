@@ -14,8 +14,8 @@ from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Chat, Message, User, Client
 
 
-OWNER_ID = 1120271521
-SUPPORT_CHAT = @darkmusicsupport
+OWNER_ID = "1120271521"
+SUPPORT_CHAT = "darkmusicsupport"
 
 
 def get_user(message: Message, text: str) -> [int, str, None]:
