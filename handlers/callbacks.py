@@ -363,7 +363,7 @@ User : {update.from_user.mention}
              text="Adding Soon....",
          )    
 		
-@Bot.on_callback_query()
+@Client.on_callback_query()
 async def cb_data(bot, update):
         data = update.data
         try:
