@@ -205,24 +205,3 @@ async def answer(bot: Client, query):
                 switch_pm_parameter="start"
             )
     await check_for_users(sender)
-
-async def answer(_, inline_query):
-	await inline_query.answer(
-		results=[
-			InlineQueryResultArticle(
-				title=f"Your Telegram ID is {inline_query.from_user.id}",
-				input_message_content=InputTextMessageContent(
-					f"My Telegram ID is `{inline_query.from_user.id}`"
-				),
-				description="Tap to send your ID to current chat",
-				thumb_url="https://telegra.ph/file/9b9e7c8c136ee79b17551.jpg",
-			)
-		],
-		cache_time=1,
-	)
-	
-	
-
- 
-	
-	
