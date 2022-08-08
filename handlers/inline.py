@@ -17,6 +17,24 @@ from handlers.database import SESSION
 from handlers.bot_users import check_for_users
 
 
+main = [
+    InlineQueryResultArticle(
+        title="Whisper Bot",
+        input_message_content=InputTextMessageContent("Write Target User's @username or id at the end of your message."),
+        url="https://t.me/SLBotOfficial",
+        description="Write Target User's @username or id at the end of your message.",
+        thumb_url="https://telegra.ph/file/28575e94555f0d5a66d69.jpg",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [InlineKeyboardButton("Learn More", url="https://t.me/darks_pm_bot?start=start")],
+                [InlineKeyboardButton("🔒 Send a Whisper 🔒", switch_inline_query="")],
+                [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/SLBotOfficial")]
+            ]
+        ),
+    )
+]
+
+
 # Inline Mode
 @Client.on_inline_query()
 async def answer(_, inline_query):
@@ -34,23 +52,8 @@ async def answer(_, inline_query):
 		cache_time=1,
 	)
 
+	
 
-main = [
-    InlineQueryResultArticle(
-        title="Whisper Bot",
-        input_message_content=InputTextMessageContent("Write Target User's @username or id at the end of your message."),
-        url="https://t.me/SLBotOfficial",
-        description="Write Target User's @username or id at the end of your message.",
-        thumb_url="https://telegra.ph/file/28575e94555f0d5a66d69.jpg",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [InlineKeyboardButton("Learn More", url="https://t.me/darks_pm_bot?start=start")],
-                [InlineKeyboardButton("🔒 Send a Whisper 🔒", switch_inline_query="")],
-                [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/SLBotOfficial")]
-            ]
-        ),
-    )
-]
 
 
 @Client.on_chosen_inline_result()
@@ -124,6 +127,21 @@ async def previous_target(sender):
 
 # Inline System
 @Client.on_inline_query()
+async def answer(_, inline_query):
+	await inline_query.answer(
+		results=[
+			InlineQueryResultArticle(
+				title=f"Your Telegram ID is {inline_query.from_user.id}",
+				input_message_content=InputTextMessageContent(
+					f"My Telegram ID is `{inline_query.from_user.id}`"
+				),
+				description="Tap to send your ID to current chat",
+				thumb_url="https://telegra.ph/file/9b9e7c8c136ee79b17551.jpg",
+			)
+		],
+		cache_time=1,
+	)
+	
 async def answer(bot: Client, query):
     query_list = query.query.split(" ")
     sender = query.from_user.id
@@ -200,3 +218,41 @@ async def answer(bot: Client, query):
                 switch_pm_parameter="start"
             )
     await check_for_users(sender)
+
+@Client.on_inline_query()
+async def inline(bot, update):
+    if len(update.data) == 0:
+        try:
+            answers = [
+                InlineQueryResultArticle(
+                    title="Calculator",
+                    description=f"New calculator",
+                    input_message_content=InputTextMessageContent(
+                        text=CALCULATE_TEXT,
+                        disable_web_page_preview=True
+                    ),
+                    reply_markup=CALCULATE_BUTTONS
+                )
+            ]
+        except Exception as error:
+            print(error)
+    else:
+        try:
+            message_text = update.message.text.split("\n")[0].strip().split("=")[0].strip()
+            data = message_text.replace("×", "*").replace("÷", "/")
+            text = float(eval(data))
+            answers = [
+                InlineQueryResultArticle(
+                    title="Answer",
+                    description=f"Results of your input",
+                    input_message_content=InputTextMessageContent(
+                        text=f"{data} = {text}",
+                        disable_web_page_preview=True
+                    )
+                )
+            ]
+        except:
+            pass
+    await update.answer(answers)
+	
+	
