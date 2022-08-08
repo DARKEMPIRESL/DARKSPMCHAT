@@ -1,6 +1,6 @@
+import asyncio
 import requests
 from pyrogram import filters, Client
-from handlers import arq
 from gpytranslate import Translator
 from pyrogram.errors import PeerIdInvalid
 from pyrogram.types import Message, User
@@ -13,8 +13,16 @@ import aiofiles
 from telegraph import upload_file
 from io import BytesIO
 from traceback import format_exc
+from config import *
+import pytz
+from Python_ARQ import ARQ
+from inspect import getfullargspec
+import time
 
 
+loop = asyncio.get_event_loop()
+aiohttpsession = ClientSession()
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 @Client.on_message(filters.command("tr"))
 async def tr(_, message):
