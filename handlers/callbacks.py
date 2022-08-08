@@ -388,7 +388,8 @@ async def cb_data(bot, update):
 
 @Client.on_inline_query()
 async def inline(bot, update):
-    if len(update.data) == 0:
+	data = update.data
+    if len(data) == 0:
         try:
             answers = [
                 InlineQueryResultArticle(
