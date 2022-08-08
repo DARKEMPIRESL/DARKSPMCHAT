@@ -1,14 +1,8 @@
 import os
 from pyrogram import Client, filters
 from pyrogram.types import *
+from config import *
 
-
-Bot = Client(
-    "Calculator Bot",
-    bot_token = os.environ["BOT_TOKEN"],
-    api_id = int(os.environ["API_ID"]),
-    api_hash = os.environ["API_HASH"]
-)
 
 
 START_TEXT = """
@@ -54,7 +48,7 @@ CALCULATE_BUTTONS = InlineKeyboardMarkup(
 
 
 
-@Bot.on_message(filters.private & filters.command(["calc", "calculate", "calculator"]))
+@Client.on_message(filters.command(["calc", "calculate", "calculator"]))
 async def calculate(bot, update):
     await update.reply_text(
         text=CALCULATE_TEXT,
@@ -64,61 +58,4 @@ async def calculate(bot, update):
     )
 
 
-@Bot.on_callback_query()
-async def cb_data(bot, update):
-        data = update.data
-        try:
-            message_text = update.message.text.split("\n")[0].strip().split("=")[0].strip()
-            message_text = '' if CALCULATE_TEXT in message_text else message_text
-            if data == "=":
-                text = float(eval(message_text))
-            elif data == "DEL":
-                text = message_text[:-1]
-            elif data == "AC":
-                text = ""
-            else:
-                text = message_text + data
-            await update.message.edit_text(
-                text=f"{text}\n\n{CALCULATE_TEXT}",
-                disable_web_page_preview=True,
-                reply_markup=CALCULATE_BUTTONS
-            )
-        except Exception as error:
-            print(error)
 
-
-@Bot.on_inline_query()
-async def inline(bot, update):
-    if len(update.data) == 0:
-        try:
-            answers = [
-                InlineQueryResultArticle(
-                    title="Calculator",
-                    description=f"New calculator",
-                    input_message_content=InputTextMessageContent(
-                        text=CALCULATE_TEXT,
-                        disable_web_page_preview=True
-                    ),
-                    reply_markup=CALCULATE_BUTTONS
-                )
-            ]
-        except Exception as error:
-            print(error)
-    else:
-        try:
-            message_text = update.message.text.split("\n")[0].strip().split("=")[0].strip()
-            data = message_text.replace("×", "*").replace("÷", "/")
-            text = float(eval(data))
-            answers = [
-                InlineQueryResultArticle(
-                    title="Answer",
-                    description=f"Results of your input",
-                    input_message_content=InputTextMessageContent(
-                        text=f"{data} = {text}",
-                        disable_web_page_preview=True
-                    )
-                )
-            ]
-        except:
-            pass
-    await update.answer(answers)
