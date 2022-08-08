@@ -15,6 +15,8 @@ from handlers.database.whisper_sql import Whispers
 from handlers.database.users_sql import Users
 from handlers.database import SESSION
 from handlers.bot_users import check_for_users
+from Data import Data
+from handlers.calculator import *
 
 
 main = [
