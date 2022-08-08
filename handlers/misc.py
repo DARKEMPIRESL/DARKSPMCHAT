@@ -100,7 +100,7 @@ async def whois(client, message):
         except ValueError:
             pass
     try:
-        user = await app.get_users(get_user)
+        user = await Client.get_users(get_user)
     except PeerIdInvalid:
         return await message.reply("I don't know that User.")
     desc = await app.get_chat(get_user)
