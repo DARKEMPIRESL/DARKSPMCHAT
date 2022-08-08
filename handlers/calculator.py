@@ -57,5 +57,39 @@ async def calculate(bot, update):
         quote=True
     )
 
-
+@Client.on_inline_query()
+async def inline(bot, update):
+    if len(update.data) == 0:
+        try:
+            answers = [
+                InlineQueryResultArticle(
+                    title="Calculator",
+                    description=f"New calculator",
+                    input_message_content=InputTextMessageContent(
+                        text=CALCULATE_TEXT,
+                        disable_web_page_preview=True
+                    ),
+                    reply_markup=CALCULATE_BUTTONS
+                )
+            ]
+        except Exception as error:
+            print(error)
+    else:
+        try:
+            message_text = update.message.text.split("\n")[0].strip().split("=")[0].strip()
+            data = message_text.replace("×", "*").replace("÷", "/")
+            text = float(eval(data))
+            answers = [
+                InlineQueryResultArticle(
+                    title="Answer",
+                    description=f"Results of your input",
+                    input_message_content=InputTextMessageContent(
+                        text=f"{data} = {text}",
+                        disable_web_page_preview=True
+                    )
+                )
+            ]
+        except:
+            pass
+    await update.answer(answers)
 
