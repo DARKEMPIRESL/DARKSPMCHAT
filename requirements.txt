@@ -16,7 +16,7 @@ opencc
 youtube_search
 pytube
 Python_ARQ
-TgCrypto
+TgCrypto==1.2.2
 aiofiles
 dnspython
 python-dotenv
