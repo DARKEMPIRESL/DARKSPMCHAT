@@ -262,7 +262,7 @@ async def help_me(bot, message):
         reply_markup=reply_markup
     )
             
-@Client.on_message(filters.command(["help", "help@darks_pm_bot"]))  
+@Client.on_message(filters.command("help"))  
 async def tgm(bot, update):
     reply_markup = InlineKeyboardMarkup([[
                    InlineKeyboardButton(text="𝗛𝗲𝗹𝗽⁉️",callback_data="hcmds")
