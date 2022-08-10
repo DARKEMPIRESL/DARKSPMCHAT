@@ -157,7 +157,7 @@ async def paste_func(_, message: Message):
         await m.edit("Here's your paste", reply_markup=InlineKeyboardMarkup(kb))
 
 
-@Client.on_message(filters.command(["telegraph", "tm", "tgm"]))
+@Client.on_message(filters.edited & filters.command(["telegraph", "tm", "tgm"]))
 async def telegraph(client, message):
     replied = message.reply_to_message
     if not replied:
