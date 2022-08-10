@@ -1,7 +1,7 @@
 import os
 import logging
 import aiohttp
-from pyrogram import filters
+from pyrogram import filters, Client
 from pytube import YouTube
 from youtubesearchpython import VideosSearch
 
@@ -54,7 +54,7 @@ class AioHttp:
                 return await resp.read()
 
 
-@pbot.on_message(filters.command("music"))
+@Client.on_message(filters.command("music"))
 async def song(client, message):
     message.chat.id
     user_id = message.from_user["id"]
