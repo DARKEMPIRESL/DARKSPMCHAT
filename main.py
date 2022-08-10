@@ -5,6 +5,10 @@ from pyrogram import Client, idle
 from config import *
 
 logging.getLogger("pyrogram").setLevel(logging.INFO)
+logging.basicConfig(
+    level=logging.DEBUG, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 Client = Client(
     "DARK Pm Bot",
