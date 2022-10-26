@@ -47,6 +47,8 @@ $ python3 bot.py
 -  `OWNER_ID` - Bot OWNER ids
 <br><br>
 
+[![Docker Image CI](https://github.com/DARKEMPIRESL/DARKSPMCHAT/actions/workflows/docker-image.yml/badge.svg)](https://github.com/DARKEMPIRESL/DARKSPMCHAT/actions/workflows/docker-image.yml)
+
 CONTRIBUTIONS AND SUGGESTIONS ARE WELCOME !!
 
 
