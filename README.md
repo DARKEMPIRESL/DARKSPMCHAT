@@ -25,7 +25,7 @@
 
 ```sh
 $ git clone https://github.com/DARKEMPIRESL/DARKSPMCHAT.git
-$ cd Calculator-Bot
+$ cd DARKSPMCHAT
 $ pip3 install -r requirements.txt
 # <create Variables Appropriately>
 $ python3 bot.py
